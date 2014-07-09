@@ -19,7 +19,7 @@
         <property name="FilterDisplayValue2" type="string" />
         <property name="FilterDisplayValue1" type="string" />
         <property name="FilterField1" type="string" />
-        <property name="Description" type="string">Displays a dynamic view of content from your site.</property>
+        <property name="Description" type="string">[Built by Advisicon] Displays a dynamic view of content from your site.</property>
         <property name="DataColumnRenames" type="string" />
         <property name="MissingAssembly" type="string">Cannot import this Web Part.</property>
         <property name="PageSize" type="int">-1</property>
@@ -28,7 +28,7 @@
         <property name="HelpUrl" type="string" />
         <property name="AdditionalFilterFields" type="string" />
         <property name="DataMappingViewFields" type="string" />
-        <property name="Title" type="string">Content Query</property>
+        <property name="Title" type="string">[Advisicon] Custom Content Query</property>
         <property name="FeedDescription" type="string" />
         <property name="UseCache" type="bool">True</property>
         <property name="XslLink" type="string" null="true" />
@@ -78,7 +78,7 @@
         <property name="GroupBy" type="string" />
         <property name="FilterIncludeChildren1" type="bool">False</property>
         <property name="BaseType" type="string" />
-        <property name="MainXslLink" type="string">/Style%20Library/XSL%20Style%20Sheets/CustomContentQueryMain.xsl</property>
+        <property name="MainXslLink" type="string">/Style Library/XSL Style Sheets/CustomContentQueryMain.xsl</property>
         <property name="AsyncRefresh" type="bool">False</property>
         <property name="FilterValue1" type="string" />
         <property name="FilterValue2" type="string" />
@@ -97,10 +97,10 @@
         <property name="FilterOperator2" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+FilterFieldQueryOperator, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Eq</property>
         <property name="PageType" type="Microsoft.SharePoint.PAGETYPE, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">PAGE_NORMALVIEW</property>
         <property name="FilterByAudience" type="bool">False</property>
-        <property name="ItemXslLink" type="string">/Style%20Library/XSL%20Style%20Sheets/CustomItemStyle.xsl</property>
+        <property name="ItemXslLink" type="string">/Style Library/XSL Style Sheets/CustomItemStyle.xsl</property>
         <property name="Hidden" type="bool">False</property>
         <property name="WebUrl" type="string" />
-        <property name="HeaderXslLink" type="string">/Style%20Library/XSL%20Style%20Sheets/CustomHeader.xsl</property>
+        <property name="HeaderXslLink" type="string">/Style Library/XSL Style Sheets/CustomHeader.xsl</property>
         <property name="CacheXslStorage" type="bool">True</property>
         <property name="ListsOverride" type="string" />
         <property name="SortByDirection" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+SortDirection, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Desc</property>
