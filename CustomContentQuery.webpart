@@ -20,7 +20,7 @@
         <property name="FilterDisplayValue1" type="string" />
         <property name="FilterField1" type="string" />
         <property name="Description" type="string">[Built by Advisicon] Displays a dynamic view of content from your site.</property>
-        <property name="DataColumnRenames" type="string" />
+        <property name="DataColumnRenames" type="string">Need_x0020_Attention,Description</property>
         <property name="MissingAssembly" type="string">Cannot import this Web Part.</property>
         <property name="PageSize" type="int">-1</property>
         <property name="ViewContentTypeId" type="string" />
@@ -46,7 +46,7 @@
         <property name="XmlDefinitionLink" type="string" />
         <property name="ServerTemplate" type="string" />
         <property name="TitleUrl" type="string" />
-        <property name="CommonViewFields" type="string" />
+        <property name="CommonViewFields" type="string">Need_x0020_Attention,Number;Managing,Number;Closed,Number</property>
         <property name="QueryOverride" type="string" />
         <property name="DataSourcesString" type="string" />
         <property name="DisplayName" type="string" />
