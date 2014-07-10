@@ -674,34 +674,40 @@
           </a>
         </div>
       </xsl:if>
-      <div class="link-item">
+      <tr class="link-item">
         <xsl:call-template name="OuterTemplate.CallPresenceStatusIconTemplate"/>
-        <a href="{$SafeLinkUrl}" title="{@LinkToolTip}">
-          <xsl:if test="$ItemsHaveStreams = 'True'">
-            <xsl:attribute name="onclick">
-              <xsl:value-of select="@OnClickForWebRendering"/>
-            </xsl:attribute>
-          </xsl:if>
-          <xsl:if test="$ItemsHaveStreams != 'True' and @OpenInNewWindow = 'True'">
-            <xsl:attribute name="onclick">
-              <xsl:value-of disable-output-escaping="yes" select="$OnClickTargetAttribute"/>
-            </xsl:attribute>
-          </xsl:if>
-          <xsl:value-of select="$DisplayTitle"/>
-        </a>
-        <div class="description">
-          <xsl:value-of select="@Description" />
-        </div>
-        <div class="need-attention">
-          <xsl:value-of select="@NeedAttention" />
-        </div>
-        <div class="managing">
+        <td>
+          <a href="{$SafeLinkUrl}" title="{@LinkToolTip}">
+            <xsl:if test="$ItemsHaveStreams = 'True'">
+              <xsl:attribute name="onclick">
+                <xsl:value-of select="@OnClickForWebRendering"/>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="$ItemsHaveStreams != 'True' and @OpenInNewWindow = 'True'">
+              <xsl:attribute name="onclick">
+                <xsl:value-of disable-output-escaping="yes" select="$OnClickTargetAttribute"/>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="$DisplayTitle"/>
+          </a>
+        </td>
+        <xsl:if test="@NeedAttention != 0">
+          <td class="need-attention warning" style="background-color:#ff0000;">
+            <xsl:value-of select="@NeedAttention"/>
+          </td>
+        </xsl:if>
+        <xsl:if test="@NeedAttention = 0">
+          <td class="need-attention">
+            <xsl:value-of select="@NeedAttention"/>
+          </td>
+        </xsl:if>
+        <td class="managing">
           <xsl:value-of select="@Managing"/>
-        </div>
-        <div class="closed">
+        </td>
+        <td class="closed">
           <xsl:value-of select="@Closed"/>
-        </div>
-      </div>
+        </td>
+      </tr>
     </div>
   </xsl:template>
   <xsl:template name="HiddenSlots" match="Row[@Style='HiddenSlots']" mode="itemstyle">
