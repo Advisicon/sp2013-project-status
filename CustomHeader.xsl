@@ -55,5 +55,13 @@
         <xsl:text>&#xA;</xsl:text>
     </div>
   </xsl:template>
+  <xsl:template name="HighlightWarnings" match="*[@GroupStyle='HighlightWarnings']" mode="header">
+    <div class="groupheader item medium">
+      <xsl:call-template name="OuterTemplate.GetGroupName">
+        <xsl:with-param name="GroupName" select="@*[name()=$Group]"/>
+        <xsl:with-param name="GroupType" select="$GroupType"/>
+      </xsl:call-template>
+    </div>
+  </xsl:template>
 </xsl:stylesheet>
 
