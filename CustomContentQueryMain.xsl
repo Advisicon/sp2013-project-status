@@ -30,10 +30,6 @@
     <xsl:param name="CBQPageUrl" />
     <xsl:param name="CBQPageUrlQueryStringForFilters" />
     <xsl:param name="EffectiveDeviceChannel" />
-  <xsl:variable name="BeginList" select="string('&lt;ul class=&quot;dfwp-list&quot;&gt;')" />
-  <xsl:variable name="EndList" select="string('&lt;/ul&gt;')" />
-  <xsl:variable name="BeginListItem" select="string('&lt;div class=&quot;jeff-dfwp-item&quot;&gt;')" />
-  <xsl:variable name="EndListItem" select="string('&lt;/div&gt;')" />
   <xsl:template match="/">
         <xsl:call-template name="OuterTemplate" />
     </xsl:template>
@@ -86,8 +82,8 @@
       <xsl:param name="Rows" />
       <xsl:param name="FirstRow" />
       <xsl:param name="LastRow" />
-      <xsl:variable name="BeginColumn1" select="string('&lt;table class=&quot;jeff-table&quot; style=&quot;width:')" />
-      <xsl:variable name="BeginColumn2" select="string('%; max-width:500px;&quot; &gt;')" />
+      <xsl:variable name="BeginColumn1" select="string('&lt;table class=&quot;adv-project-status&quot; style=&quot;width:')" />
+      <xsl:variable name="BeginColumn2" select="string('%;&quot; &gt;')" />
       <xsl:variable name="BeginColumn3" select="string('&lt;thead&gt;&lt;th&gt;Project&lt;/th&gt;&lt;th&gt;Need Attention&lt;/th&gt;&lt;th&gt;Managing&lt;/th&gt;&lt;th&gt;Closed&lt;/th&gt;&lt;/thead&gt;&lt;tbody&gt;')" />
       <xsl:variable name="BeginColumn" select="concat($BeginColumn1, $cbq_columnwidth, $BeginColumn2, $BeginColumn3)" />
       <xsl:variable name="EndColumn" select="string('&lt;/tbody&gt;&lt;/table&gt;')" />
@@ -152,14 +148,11 @@
         </xsl:for-each>
     </xsl:template>
     <xsl:template name="OuterTemplate.CallHeaderTemplate">
-      <xsl:value-of disable-output-escaping="yes" select="$BeginListItem" />
       <xsl:apply-templates select="." mode="header">
         </xsl:apply-templates>
-      <xsl:value-of disable-output-escaping="yes" select="$BeginList" />
     </xsl:template>
     <xsl:template name="OuterTemplate.CallItemTemplate">
     <xsl:param name="CurPosition" />
-      <xsl:value-of disable-output-escaping="yes" select="$BeginListItem" />
       <xsl:choose>
               <xsl:when test="@Style='NewsRollUpItem'">
                   <xsl:apply-templates select="." mode="itemstyle">
@@ -181,11 +174,8 @@
                   </xsl:apply-templates>
               </xsl:otherwise>
           </xsl:choose>
-      <xsl:value-of disable-output-escaping="yes" select="$EndListItem" />
     </xsl:template>
     <xsl:template name="OuterTemplate.CallFooterTemplate">
-      <xsl:value-of disable-output-escaping="yes" select="$EndList" />
-      <xsl:value-of disable-output-escaping="yes" select="$EndListItem" />
     </xsl:template>
     <xsl:template name="OuterTemplate.GetSafeLink">
         <xsl:param name="UrlColumnName"/>

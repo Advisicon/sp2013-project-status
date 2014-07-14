@@ -28,70 +28,68 @@
         <xsl:with-param name="UrlColumnName" select="'LinkUrl'"/>
       </xsl:call-template>
     </xsl:variable>
-    <div class="item">
-      <xsl:if test="string-length($SafeImageUrl) != 0">
-        <div class="image-area-left">
-          <a href="{$SafeLinkUrl}">
-            <xsl:if test="$ItemsHaveStreams = 'True'">
-              <xsl:attribute name="onclick">
-                <xsl:value-of select="@OnClickForWebRendering"/>
-              </xsl:attribute>
-            </xsl:if>
-            <xsl:if test="$ItemsHaveStreams != 'True' and @OpenInNewWindow = 'True'">
-              <xsl:attribute name="onclick">
-                <xsl:value-of disable-output-escaping="yes" select="$OnClickTargetAttribute"/>
-              </xsl:attribute>
-            </xsl:if>
-            <img class="image" src="{$SafeImageUrl}" title="{@ImageUrlAltText}">
-              <xsl:if test="$ImageWidth != ''">
-                <xsl:attribute name="width">
-                  <xsl:value-of select="$ImageWidth" />
+    <tr class="item">
+      <xsl:call-template name="OuterTemplate.CallPresenceStatusIconTemplate"/>
+      <td>
+        <xsl:if test="string-length($SafeImageUrl) != 0">
+          <div class="image-area-left">
+            <a href="{$SafeLinkUrl}">
+              <xsl:if test="$ItemsHaveStreams = 'True'">
+                <xsl:attribute name="onclick">
+                  <xsl:value-of select="@OnClickForWebRendering"/>
                 </xsl:attribute>
               </xsl:if>
-              <xsl:if test="$ImageHeight != ''">
-                <xsl:attribute name="height">
-                  <xsl:value-of select="$ImageHeight" />
+              <xsl:if test="$ItemsHaveStreams != 'True' and @OpenInNewWindow = 'True'">
+                <xsl:attribute name="onclick">
+                  <xsl:value-of disable-output-escaping="yes" select="$OnClickTargetAttribute"/>
                 </xsl:attribute>
               </xsl:if>
-            </img>
-          </a>
-        </div>
+              <img class="image" src="{$SafeImageUrl}" title="{@ImageUrlAltText}">
+                <xsl:if test="$ImageWidth != ''">
+                  <xsl:attribute name="width">
+                    <xsl:value-of select="$ImageWidth" />
+                  </xsl:attribute>
+                </xsl:if>
+                <xsl:if test="$ImageHeight != ''">
+                  <xsl:attribute name="height">
+                    <xsl:value-of select="$ImageHeight" />
+                  </xsl:attribute>
+                </xsl:if>
+              </img>
+            </a>
+          </div>
+        </xsl:if>
+        <a href="{$SafeLinkUrl}" title="{@LinkToolTip}">
+          <xsl:if test="$ItemsHaveStreams = 'True'">
+            <xsl:attribute name="onclick">
+              <xsl:value-of select="@OnClickForWebRendering"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="$ItemsHaveStreams != 'True' and @OpenInNewWindow = 'True'">
+            <xsl:attribute name="onclick">
+              <xsl:value-of disable-output-escaping="yes" select="$OnClickTargetAttribute"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:value-of select="$DisplayTitle"/>
+        </a>
+      </td>
+      <xsl:if test="@NeedAttention != 0">
+        <td class="need-attention warning" style="background-color:#ffcccc;">
+          <xsl:value-of select="@NeedAttention"/>
+        </td>
       </xsl:if>
-      <tr class="link-item">
-        <xsl:call-template name="OuterTemplate.CallPresenceStatusIconTemplate"/>
-        <td>
-          <a href="{$SafeLinkUrl}" title="{@LinkToolTip}">
-            <xsl:if test="$ItemsHaveStreams = 'True'">
-              <xsl:attribute name="onclick">
-                <xsl:value-of select="@OnClickForWebRendering"/>
-              </xsl:attribute>
-            </xsl:if>
-            <xsl:if test="$ItemsHaveStreams != 'True' and @OpenInNewWindow = 'True'">
-              <xsl:attribute name="onclick">
-                <xsl:value-of disable-output-escaping="yes" select="$OnClickTargetAttribute"/>
-              </xsl:attribute>
-            </xsl:if>
-            <xsl:value-of select="$DisplayTitle"/>
-          </a>
+      <xsl:if test="@NeedAttention = 0">
+        <td class="need-attention">
+          <xsl:value-of select="@NeedAttention"/>
         </td>
-        <xsl:if test="@NeedAttention != 0">
-          <td class="need-attention warning" style="background-color:#ffcccc;">
-            <xsl:value-of select="@NeedAttention"/>
-          </td>
-        </xsl:if>
-        <xsl:if test="@NeedAttention = 0">
-          <td class="need-attention">
-            <xsl:value-of select="@NeedAttention"/>
-          </td>
-        </xsl:if>
-        <td class="managing">
-          <xsl:value-of select="@Managing"/>
-        </td>
-        <td class="closed">
-          <xsl:value-of select="@Closed"/>
-        </td>
-      </tr>
-    </div>
+      </xsl:if>
+      <td class="managing">
+        <xsl:value-of select="@Managing"/>
+      </td>
+      <td class="closed">
+        <xsl:value-of select="@Closed"/>
+      </td>
+    </tr>
   </xsl:template>
   <xsl:template name="HiddenSlots" match="Row[@Style='HiddenSlots']" mode="itemstyle">
     <div class="SipAddress">
