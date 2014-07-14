@@ -93,7 +93,14 @@
       <xsl:variable name="EndColumn" select="string('&lt;/tbody&gt;&lt;/table&gt;')" />
       <xsl:for-each select="$Rows">
             <xsl:variable name="CurPosition" select="position()" />
-            <xsl:if test="($CurPosition &gt;= $FirstRow and $CurPosition &lt;= $LastRow)">
+              <xsl:if test="$CurPosition = 1">
+                <xsl:text disable-output-escaping="yes">
+                  <![CDATA[
+                    <link rel="stylesheet" href="/Style Library/Advisicon Style Sheets/advisicon-project-status.css" />
+                  ]]>
+                </xsl:text>
+              </xsl:if>
+              <xsl:if test="($CurPosition &gt;= $FirstRow and $CurPosition &lt;= $LastRow)">
                 <xsl:variable name="StartNewGroup" select="@__begingroup = 'True'" />
                 <xsl:variable name="StartNewColumn" select="@__begincolumn = 'True'" />
                 <xsl:choose>
