@@ -28,7 +28,15 @@
         <xsl:with-param name="UrlColumnName" select="'LinkUrl'"/>
       </xsl:call-template>
     </xsl:variable>
-    <tr class="item">
+    <tr>
+      <xsl:attribute name="class">
+        <xsl:if test="@NeedAttention != 0">
+          <xsl:text>item warning</xsl:text>
+        </xsl:if>
+        <xsl:if test="@NeedAttention = 0">
+          <xsl:text>item</xsl:text>
+        </xsl:if>
+      </xsl:attribute>
       <xsl:call-template name="OuterTemplate.CallPresenceStatusIconTemplate"/>
       <td>
         <xsl:if test="string-length($SafeImageUrl) != 0">
@@ -74,7 +82,7 @@
         </a>
       </td>
       <xsl:if test="@NeedAttention != 0">
-        <td class="need-attention warning" style="background-color:#ffcccc;">
+        <td class="need-attention warning">
           <xsl:value-of select="@NeedAttention"/>
         </td>
       </xsl:if>

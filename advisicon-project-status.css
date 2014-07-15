@@ -1,16 +1,54 @@
-.adv-project-status .link-item {
+.adv-project-status { 
+  max-width: 500px; 
+  border-collapse: separate;
+  border-spacing: 0px;
+  position: relative;
+  left: -6px;
+}
+
+.adv-project-status .item {
   font-family: 'Segoe UI', Segoe, Tahoma, Helvetica, Arial, sans-serif;
 }
 
 .adv-project-status thead {
-  font-weight: normal;
   font-size: 0.85em;
   color: rgb(119, 119, 119);
-
 }
 
-.need-attention.warning {
-  background-color: #ffcccc;
-  color: #ff3333;
+.adv-project-status th { font-weight: normal; }
+
+.adv-project-status td a {
+  color: #444444;
+  text-decoration: none;
+}
+
+.adv-project-status tr:hover, 
+.adv-project-status tr:focus, 
+.adv-project-status tr:active {
+  background-color: #eeeeee;
+}
+
+.need-attention,
+.managing,
+.closed {
+  text-align: right;
+}
+
+.adv-project-status td.warning {
+  background-color: #ffeeee;
+  color: #dd3333;
   font-weight: bold;
 }
+
+.adv-project-status tr { border-left: 3px solid transparent; }
+
+.adv-project-status tr.item td:first-child,
+.adv-project-status thead th:first-child {
+  padding-left: 3px;
+}
+
+.adv-project-status tr.warning {
+  border-left: 3px solid #dd3333;
+}
+
+
