@@ -78,9 +78,6 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <xsl:template name="FieldRef_body.Status" match="FieldRef[@Name=/ViewFields/FieldRef[1]/@Name]">
-      <xsl:value-of select="@Name" />
-    </xsl:template>
     <xsl:template name="OuterTemplate.Body">
       <xsl:param name="Rows" />
       <xsl:param name="FirstRow" />
@@ -90,22 +87,16 @@
       
       <xsl:variable name="BeginColumn3" select="string('&lt;thead&gt;&lt;th&gt;Project&lt;/th&gt;&lt;th class=&quot;need-attention&quot;&gt;Need Attention&lt;/th&gt;&lt;th class=&quot;managing&quot;&gt;Managing&lt;/th&gt;&lt;th class=&quot;closed&quot;&gt;Closed&lt;/th&gt;&lt;/thead&gt;&lt;tbody&gt;')" />
       
-      <!--
       <xsl:variable name="BeginColumn3start" select="string('&lt;thead&gt;')" />
       <xsl:variable name="BeginColumn3end" select="string('&lt;/thead&gt;')" />
+      <!--
       <xsl:variable name="BeginColumn3inner">
-        <xsl:for-each select="@*">
-          <xsl:text disable-output-escaping="yes">
-            <![CDATA[<th>]]>
-          </xsl:text>
-          <xsl:call-template name="FieldRef_body.Status" />
-          <xsl:text disable-output-escaping="yes">
-            <![CDATA[</th>]]>
-          </xsl:text>
-        </xsl:for-each>
+        <xsl:call-template name="FieldRef[@Name='Need_x0020_Attention']" />
       </xsl:variable>
-      <xsl:variable name="BeginColumn3" select="concat($BeginColumn3start, $BeginColumn3inner, $BeginColumn3end)" />
+      
+      <xsl:variable name="BeginColumn3" select="concat($BeginColumn3start, $BeginColumn3end)" />
       -->
+      
       <xsl:variable name="BeginColumn" select="concat($BeginColumn1, $cbq_columnwidth, $BeginColumn2, $BeginColumn3)" />
       <xsl:variable name="EndColumn" select="string('&lt;/tbody&gt;&lt;/table&gt;')" />
       <xsl:for-each select="$Rows">

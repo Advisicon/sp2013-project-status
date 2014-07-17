@@ -11,6 +11,14 @@
   <xsl:variable name="OnClickTargetAttribute" select="string('javascript:this.target=&quot;_blank&quot;')" />
   <xsl:variable name="ImageWidth" />
   <xsl:variable name="ImageHeight" />
+  <xsl:template name="AllValues" match="Row[@Style='AllValues']" mode="itemstyle">
+    <xsl:for-each select="@*">
+      <xsl:value-of select="name()"/>
+      <xsl:text> = </xsl:text>
+      <xsl:value-of select="."/>
+      <br/>
+    </xsl:for-each>
+  </xsl:template>
   <xsl:template name="HighlightWarnings" match="Row[@Style='HighlightWarnings']" mode="itemstyle">
     <xsl:variable name="SafeLinkUrl">
       <xsl:call-template name="OuterTemplate.GetSafeLink">
