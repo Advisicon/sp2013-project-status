@@ -30,8 +30,8 @@
     <xsl:param name="CBQPageUrl" />
     <xsl:param name="CBQPageUrlQueryStringForFilters" />
     <xsl:param name="EffectiveDeviceChannel" />
-  <xsl:template match="/">
-        <xsl:call-template name="OuterTemplate" />
+    <xsl:template match="/">
+      <xsl:call-template name="OuterTemplate" />
     </xsl:template>
     <xsl:template name="OuterTemplate">
         <xsl:variable name="Rows" select="/dsQueryResponse/Rows/Row" />
