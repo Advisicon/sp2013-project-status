@@ -38,10 +38,10 @@
     </xsl:variable>
     <tr>
       <xsl:attribute name="class">
-        <xsl:if test="@NeedAttention != 0">
+        <xsl:if test="@ActionRequired != 0">
           <xsl:text>item warning</xsl:text>
         </xsl:if>
-        <xsl:if test="@NeedAttention = 0">
+        <xsl:if test="@ActionRequired = 0">
           <xsl:text>item</xsl:text>
         </xsl:if>
       </xsl:attribute>
@@ -89,21 +89,21 @@
           <xsl:value-of select="$DisplayTitle"/>
         </a>
       </td>
-      <xsl:if test="@NeedAttention != 0">
-        <td class="need-attention warning">
-          <xsl:value-of select="@NeedAttention"/>
+      <xsl:if test="@ActionRequired != 0">
+        <td class="action-required warning">
+          <xsl:value-of select="@ActionRequired"/>
         </td>
       </xsl:if>
-      <xsl:if test="@NeedAttention = 0">
-        <td class="need-attention">
-          <xsl:value-of select="@NeedAttention"/>
+      <xsl:if test="@ActionRequired = 0">
+        <td class="action-required">
+          <xsl:value-of select="@ActionRequired"/>
         </td>
       </xsl:if>
-      <td class="managing">
-        <xsl:value-of select="@Managing"/>
+      <td class="processed">
+        <xsl:value-of select="@Processed"/>
       </td>
-      <td class="closed">
-        <xsl:value-of select="@Closed"/>
+      <td class="completed">
+        <xsl:value-of select="@Completed"/>
       </td>
     </tr>
   </xsl:template>

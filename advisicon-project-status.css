@@ -6,9 +6,7 @@
   left: -6px;
 }
 
-.adv-project-status .item {
-  font-family: 'Segoe UI', Segoe, Tahoma, Helvetica, Arial, sans-serif;
-}
+.adv-project-status .item { font-family: 'Segoe UI', Segoe, Tahoma, Helvetica, Arial, sans-serif; }
 
 .adv-project-status thead {
   font-size: 0.85em;
@@ -28,9 +26,9 @@
   background-color: #eeeeee;
 }
 
-.need-attention,
-.managing,
-.closed {
+.adv-project-status .action-required,
+.adv-project-status .processed,
+.adv-project-status .completed {
   text-align: right;
 }
 
@@ -47,8 +45,4 @@
   padding-left: 3px;
 }
 
-.adv-project-status tr.warning {
-  border-left: 3px solid #dd3333;
-}
-
-
+.adv-project-status tr.warning { border-left: 3px solid #dd3333; }

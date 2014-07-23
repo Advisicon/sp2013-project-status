@@ -85,17 +85,10 @@
       <xsl:variable name="BeginColumn1" select="string('&lt;table class=&quot;adv-project-status&quot; style=&quot;width:')" />
       <xsl:variable name="BeginColumn2" select="string('%;&quot; &gt;')" />
       
-      <xsl:variable name="BeginColumn3" select="string('&lt;thead&gt;&lt;th&gt;Project&lt;/th&gt;&lt;th class=&quot;need-attention&quot;&gt;Need Attention&lt;/th&gt;&lt;th class=&quot;managing&quot;&gt;Managing&lt;/th&gt;&lt;th class=&quot;closed&quot;&gt;Closed&lt;/th&gt;&lt;/thead&gt;&lt;tbody&gt;')" />
+      <xsl:variable name="BeginColumn3" select="string('&lt;thead&gt;&lt;th&gt;Project&lt;/th&gt;&lt;th class=&quot;action-required&quot;&gt;Need Attention&lt;/th&gt;&lt;th class=&quot;processed&quot;&gt;Managing&lt;/th&gt;&lt;th class=&quot;completed&quot;&gt;Closed&lt;/th&gt;&lt;/thead&gt;&lt;tbody&gt;')" />
       
       <xsl:variable name="BeginColumn3start" select="string('&lt;thead&gt;')" />
       <xsl:variable name="BeginColumn3end" select="string('&lt;/thead&gt;')" />
-      <!--
-      <xsl:variable name="BeginColumn3inner">
-        <xsl:call-template name="FieldRef[@Name='Need_x0020_Attention']" />
-      </xsl:variable>
-      
-      <xsl:variable name="BeginColumn3" select="concat($BeginColumn3start, $BeginColumn3end)" />
-      -->
       
       <xsl:variable name="BeginColumn" select="concat($BeginColumn1, $cbq_columnwidth, $BeginColumn2, $BeginColumn3)" />
       <xsl:variable name="EndColumn" select="string('&lt;/tbody&gt;&lt;/table&gt;')" />
